@@ -1,10 +1,11 @@
-filippo.io/edwards25519 v1.1.0 h1:FNf4tywRC1HmFuKW5xopWpigGjJKiJSV0Cqo0cJWDaA=
-filippo.io/edwards25519 v1.1.0/go.mod h1:BxyFTGdWcka3PhytdK4V28tE5sGfRvvvRV7EaN4VDT4=
-github.com/KhanbalaRashidov/microservices-proto/golang/order v1.2.3 h1:e2wrguHjooxNCS3sWoKu4dIXLZfpf7fUDVwmIZimugA=
-github.com/KhanbalaRashidov/microservices-proto/golang/order v1.2.3/go.mod h1:rJ8QPpUMhInZ2+nnHdqSuey8Lx/I4YQHuI/MxTRP4pY=
+github.com/KhanbalaRashidov/microservices-proto/golang/order v1.2.8 h1:c46ddylUOkUCdjZqYCq9uQ4RW+mrS5VKRqNlwPPKf+8=
+github.com/KhanbalaRashidov/microservices-proto/golang/order v1.2.8/go.mod h1:rJ8QPpUMhInZ2+nnHdqSuey8Lx/I4YQHuI/MxTRP4pY=
+github.com/KhanbalaRashidov/microservices-proto/golang/payment v1.0.0 h1:uV9dCIwYY6GUBqIxT8iOD7xDncrkONqgaKnibXPjO5U=
+github.com/KhanbalaRashidov/microservices-proto/golang/payment v1.0.0/go.mod h1:9mijVqe6DoBIZGnbHm823gplF/NtdXn1/H2VVJoFNNQ=
+github.com/go-sql-driver/mysql v1.7.0 h1:ueSltNNllEqE3qcWBTD0iQd3IpL/6U+mJxLkazJ7YPc=
 github.com/go-sql-driver/mysql v1.7.0/go.mod h1:OXbVy3sEdcQ2Doequ6Z5BW6fXNQTmx+9S1MCJN5yJMI=
-github.com/go-sql-driver/mysql v1.8.1 h1:LedoTUt/eveggdHS9qUFC1EFSa8bU2+1pZjSRpvNJ1Y=
-github.com/go-sql-driver/mysql v1.8.1/go.mod h1:wEBSXgmK//2ZFJyE+qWnIsVGmvmEKlqwuVSjsCm7DZg=
+github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
+github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=
 github.com/jinzhu/inflection v1.0.0/go.mod h1:h+uFLlag+Qp1Va5pdKtLDYj+kHp5pxUVkryuEj+Srlc=
 github.com/jinzhu/now v1.1.5 h1:/o9tlHleP7gOFmsnYNz3RGnqzefHA47wQpKrrdTIwXQ=
