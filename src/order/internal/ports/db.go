@@ -7,5 +7,5 @@ import (
 
 type DbPort interface {
 	Get(ctx context.Context, id int64) (domain.Order, error)
-	Save(*domain.Order) error
+	Save(context.Context, *domain.Order) error
 }

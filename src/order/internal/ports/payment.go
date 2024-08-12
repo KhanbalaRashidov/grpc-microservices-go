@@ -1,7 +1,10 @@
 package ports
 
-import "grpc-microservices-go/order/internal/application/core/domain"
+import (
+	"context"
+	"grpc-microservices-go/order/internal/application/core/domain"
+)
 
 type PaymentPort interface {
-	Charge(order *domain.Order) error
+	Charge(context.Context, *domain.Order) error
 }

@@ -61,7 +61,7 @@ func (a Adapter) Get(ctx context.Context, id int64) (domain.Order, error) {
 	return order, res.Error
 }
 
-func (a Adapter) Save(order *domain.Order) error {
+func (a Adapter) Save(ctx context.Context, order *domain.Order) error {
 	var orderItems []OrderItems
 	for _, orderItem := range order.OrderItems {
 		orderItems = append(orderItems, OrderItems{
@@ -75,7 +75,7 @@ func (a Adapter) Save(order *domain.Order) error {
 		Status:     order.Status,
 		OrderItems: orderItems,
 	}
-	res := a.db.Create(&orderModel)
+	res := a.db.WithContext(ctx).Create(&orderModel)
 	if res.Error == nil {
 		order.ID = int64(orderModel.ID)
 	}
