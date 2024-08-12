@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -50,4 +51,7 @@ func (app Application) PlaceOrder(order domain.Order) (domain.Order, error) {
 	}
 
 	return order, nil
+}
+func (a Application) GetOrder(ctx context.Context, id int64) (domain.Order, error) {
+	return a.db.Get(ctx, id)
 }

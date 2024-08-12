@@ -1,6 +1,7 @@
 package db
 
 import (
+	"context"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -39,9 +40,9 @@ func NewAdapter(dataSourceUrl string) (*Adapter, error) {
 	return &Adapter{db}, nil
 }
 
-func (a Adapter) Get(id string) (domain.Order, error) {
+func (a Adapter) Get(ctx context.Context, id int64) (domain.Order, error) {
 	var orderEntity Order
-	result := a.db.First(&orderEntity, id)
+	res := a.db.WithContext(ctx).Preload("OrderItems").First(&orderEntity, id)
 	var orderItems []domain.OrderItem
 	for _, orderItem := range orderEntity.OrderItems {
 		orderItems = append(orderItems, domain.OrderItem{
@@ -50,7 +51,6 @@ func (a Adapter) Get(id string) (domain.Order, error) {
 			Quantity:    orderItem.Quantity,
 		})
 	}
-
 	order := domain.Order{
 		ID:         int64(orderEntity.ID),
 		CustomerID: orderEntity.CustomerID,
@@ -58,10 +58,10 @@ func (a Adapter) Get(id string) (domain.Order, error) {
 		OrderItems: orderItems,
 		CreatedAt:  orderEntity.CreatedAt.UnixNano(),
 	}
-	return order, result.Error
+	return order, res.Error
 }
 
-func (a Adapter) Save(order domain.Order) error {
+func (a Adapter) Save(order *domain.Order) error {
 	var orderItems []OrderItems
 	for _, orderItem := range order.OrderItems {
 		orderItems = append(orderItems, OrderItems{

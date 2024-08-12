@@ -1,8 +1,11 @@
 package ports
 
-import "grpc-microservices-go/order/internal/application/core/domain"
+import (
+	"context"
+	"grpc-microservices-go/order/internal/application/core/domain"
+)
 
 type DbPort interface {
-	Get(id string) (domain.Order, error)
+	Get(ctx context.Context, id int64) (domain.Order, error)
 	Save(*domain.Order) error
 }
