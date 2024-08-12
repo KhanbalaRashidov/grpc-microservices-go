@@ -20,6 +20,7 @@ type OrderDatabaseTestSuite struct {
 func (o *OrderDatabaseTestSuite) SetupSuite() {
 	ctx := context.Background()
 	port := "3306/tcp"
+
 	dbURL := func(host string, port nat.Port) string {
 		return fmt.Sprintf("root:s3cr3t@tcp(%s:%s)/orders", host, port.Port())
 	}
